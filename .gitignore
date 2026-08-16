@@ -1,0 +1,5 @@
+.ipynb_checkpoints/
+.claude/
+exported_results/
+.DS_Store
+Thumbs.db

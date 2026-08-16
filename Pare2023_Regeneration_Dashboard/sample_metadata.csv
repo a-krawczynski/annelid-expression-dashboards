@@ -1,0 +1,16 @@
+sample,stage,replicate
+0dpa_1,0dpa,1
+0dpa_2,0dpa,2
+0dpa_3,0dpa,3
+1dpa_1,1dpa,1
+1dpa_2,1dpa,2
+2dpa_1,2dpa,1
+2dpa_2,2dpa,2
+2dpa_3,2dpa,3
+3dpa_2,3dpa,2
+3dpa_3,3dpa,3
+5dpa_1,5dpa,1
+5dpa_2,5dpa,2
+NA_1,NA,1
+NA_2,NA,2
+NA_3,NA,3
