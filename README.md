@@ -5,7 +5,7 @@ datasets — pick genes by ID, paste a list, or search by annotation keyword, th
 hierarchically-clustered heatmaps, and annotation lookups, all exportable as publication-ready vector
 PDFs and CSVs.
 
-**Authors:** Alina Krawczynski, Rannyele Passos Ribeiro (powered by Claude AI)
+**Authors:** Alina Krawczynski, Rannyele Passos Ribeiro (powered by Claude)
 **Lab:** Özpolat Lab, Washington University in St. Louis, 1 Brookings Drive, St. Louis, MO 63130
 **Year:** 2026
 
