@@ -7,7 +7,7 @@ Interactive gene-expression explorer for the whole-body regeneration transcripto
 > while anterior regeneration is a distinct process. *BMC Genomics* 20, 855.
 > https://doi.org/10.1186/s12864-019-6223-y
 
-**Authors:** Alina Krawczynski, Rannyele Passos Ribeiro (powered by Claude AI)
+**Authors:** Alina Krawczynski, Rannyele Passos Ribeiro (powered by Claude)
 **Lab:** Özpolat Lab, Washington University in St. Louis, 1 Brookings Drive, St. Louis, MO 63130
 **Year:** 2026
 
@@ -43,18 +43,66 @@ plain description, then gzip-compressed the result — shrinking both files to u
 with identical annotation content to what the dashboard would have produced by parsing the raw
 reports at runtime.
 
-## Requirements
+---
 
-- Python 3.9+
-- `pandas`, `numpy`, `matplotlib`, `seaborn`, `scipy`, `ipywidgets`
+## Getting started (no prior Python/Jupyter experience needed)
+
+You only have to do steps 1–2 once per computer.
+
+### 1. Install Python
+
+Download and install **Miniconda** (a small, free Python distribution):
+<https://www.anaconda.com/download/success> → "Miniconda Installers" → pick your operating system.
+Accept the default options during installation.
+
+- **Windows:** this also installs a program called **Anaconda Prompt** — that's the "terminal"
+  referred to below.
+- **macOS / Linux:** use the built-in **Terminal** app.
+
+### 2. Download this project
+
+On the GitHub page for this repository, click the green **`<> Code`** button → **Download ZIP**,
+then unzip it somewhere easy to find (e.g. your Desktop). If you know how to use `git`, you can
+instead run `git clone <repository-url>`.
+
+### 3. Open a terminal in this folder
+
+Open Anaconda Prompt (Windows) or Terminal (Mac/Linux) and move into this dashboard's folder.
+For example, if you unzipped the project onto your Desktop:
 
 ```bash
-pip install pandas numpy matplotlib seaborn scipy ipywidgets
+cd Desktop/annelid-expression-dashboards/Ribeiro2019_Regeneration_Dashboard
 ```
 
-Then open `Regeneration_Expression_Dashboard.ipynb` in Jupyter and run all cells in order.
+(Type `cd ` — with a space — then drag the folder onto the terminal window to fill in the path
+automatically, then press Enter.)
 
-## How to use it
+### 4. Start Jupyter
+
+```bash
+pip install notebook
+jupyter notebook
+```
+
+This opens Jupyter in your web browser. Click **`Regeneration_Expression_Dashboard.ipynb`** to
+open the notebook.
+
+### 5. Run the notebook
+
+The **first code cell is a dependency check** — it automatically installs any Python packages the
+notebook needs that you don't already have. Run it first (select it and press **Shift+Enter**).
+If it installs anything, it will tell you to restart the kernel: do **Kernel → Restart Kernel**,
+then continue.
+
+Then run everything: **Kernel → Restart Kernel and Run All Cells**. Scroll to the bottom — the
+interactive dashboard appears under the last cell.
+
+> If you prefer to install the packages yourself instead of letting the first cell do it:
+> ```bash
+> pip install pandas numpy matplotlib seaborn scipy ipywidgets
+> ```
+
+### 6. Use the dashboard
 
 1. **Choose a Species and Regeneration Conditions** — pick *Syllis gracilis* or *Sphaerosyllis
    hystrix* (the gene picker refreshes to that species' own gene list), then select any custom
@@ -62,12 +110,14 @@ Then open `Regeneration_Expression_Dashboard.ipynb` in Jupyter and run all cells
 2. **Choose Target Genes** — filter/click from the gene list, paste a list of `TR#|c#_g#` IDs, or
    search by Trinotate BLASTX annotation keyword (e.g. "kinase", "laminin") — scoped to whichever
    species is currently selected.
-3. **Generate Visuals** to preview bar charts, the multi-gene heatmap, and annotation results
-   on-screen, or **Export Active Results** to save vector PDFs and CSVs to a folder you choose (via
-   the folder-browse button or by typing a path).
+3. Click **🎯 Generate Visuals (View Only)** to preview bar charts, the multi-gene heatmap, and
+   annotation results on-screen, or **💾 Export Active Results** to save vector PDFs and CSVs to a
+   folder you choose (via the folder-browse button or by typing a path).
 
 A colorblind-safe palette toggle (Purple-Orange / Brown-Teal / Cividis) is available next to the
 default red-blue scheme for both the bar charts and the heatmap.
+
+---
 
 ## Normalization
 
@@ -81,12 +131,25 @@ comparable to one another directly.
 
 ## BLAST sequence search (optional)
 
-The notebook includes a local BLAST search cell for looking up a pasted nucleotide sequence
-against whichever species' own Trinity assembly is currently selected. This requires installing
-NCBI BLAST+ and building both search databases yourself — the databases themselves aren't included
-here (they're large, regenerable binary indexes, not primary data). Full setup instructions,
-including the exact `makeblastdb` commands for both species, are in the markdown cell above the
-BLAST cell in the notebook.
+The notebook has an optional cell that lets you paste a nucleotide sequence and find the matching
+transcript in whichever species' own Trinity assembly is currently selected. **Everything else in
+the dashboard works without this** — if BLAST isn't set up, that one cell just prints a short
+reminder and nothing else is affected.
+
+To enable it:
+
+1. **Install NCBI BLAST+** (the free `blastn` / `makeblastdb` / `blastdbcmd` toolkit):
+   - **Windows / macOS:** download the installer from
+     <https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/> and run it.
+   - **conda (any OS):** `conda install -c bioconda blast`
+   - The notebook finds BLAST+ automatically as long as it's on your system `PATH` (the installers
+     and conda both do this for you). If it's somewhere unusual, set `BLAST_BIN_DIR` at the top of
+     the BLAST code cell to the folder containing the executables.
+2. **Build the two search databases once** (one per species). The species transcriptome FASTAs are
+   not included here (they're large). The exact commands — rewrite the FASTA headers, then run
+   `makeblastdb` for each species — are in the comment at the top of the BLAST code cell. Put the
+   resulting database files in a folder called **`blast_db/`** next to the notebook, named
+   `ribeiro_sgracilis` and `ribeiro_shystrix` — that's where the notebook looks by default.
 
 ## Citation
 
