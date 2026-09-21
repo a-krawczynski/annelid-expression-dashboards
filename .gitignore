@@ -3,3 +3,14 @@
 exported_results/
 .DS_Store
 Thumbs.db
+
+# Built BLAST databases and raw reference transcriptomes: these run from tens of MB to
+# several hundred MB per species, well past GitHub's 100MB per-file limit, and are fully
+# reproducible from the SETUP instructions in each notebook's BLAST cell. Keep them local
+# (Box-synced) rather than in git.
+blast_db/
+blast_bin/
+*.fasta
+*.fa
+*.fasta.gz
+*.fa.gz
