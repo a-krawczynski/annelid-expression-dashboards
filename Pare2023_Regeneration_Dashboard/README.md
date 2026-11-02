@@ -5,7 +5,9 @@ Interactive gene-expression explorer for the posterior-regeneration transcriptom
 > Paré, A. et al. (2023). *BMC Genomics* 24:583. https://doi.org/10.1186/s12864-023-09602-z
 
 **Authors:** Alina Krawczynski, Rannyele Passos Ribeiro (built with assistance from Claude)
+
 **Lab:** Özpolat Lab, Washington University in St. Louis
+
 **Year:** 2026
 
 ## What this is
