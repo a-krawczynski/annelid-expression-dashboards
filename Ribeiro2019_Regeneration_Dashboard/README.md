@@ -45,6 +45,13 @@ plain description, then gzip-compressed the result, shrinking both files to unde
 with identical annotation content to what the dashboard would have produced by parsing the raw
 reports at runtime.
 
+**Data source, license and changes.** The data files in this folder come from Ribeiro et al. 2019
+(*BMC Genomics* 20:855), published under the
+[Creative Commons Attribution 4.0 license (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/);
+see the article at <https://doi.org/10.1186/s12864-019-6223-y> for the original data. The two
+Trinotate annotation reports were changed as described above (collapsed to one row per gene,
+best-hit field parsed, gzip-compressed).
+
 ---
 
 ## Getting started (no prior Python/Jupyter experience needed)

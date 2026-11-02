@@ -37,6 +37,13 @@ values for every column that's actually used. If you need the full original anno
 (e.g. for GO-term or pathway analysis outside this dashboard), it's available from the paper's own
 supplementary data (`Figure 2 source data 3`).
 
+**Data source, license and changes.** Both data files come from the supplementary source data of
+Schenk et al. 2019 (*eLife* 8:e41556), published under the
+[Creative Commons Attribution 4.0 license (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/);
+the originals are available at <https://doi.org/10.7554/eLife.41556> (Figure 3 source data 13 and
+Figure 2 source data 3). Data 13 is included as published. The InterPro annotation export was
+trimmed to 4 columns and gzip-compressed, as described above.
+
 ---
 
 ## Getting started (no prior Python/Jupyter experience needed)

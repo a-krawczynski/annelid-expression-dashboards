@@ -2,7 +2,7 @@
 
 Interactive gene-expression explorer for the posterior-regeneration transcriptomics study from:
 
-> Paré, A. et al. (2023). *BMC Genomics* 24:583. https://doi.org/10.1186/s12864-023-09602-z
+> Paré, L. et al. (2023). *BMC Genomics* 24:583. https://doi.org/10.1186/s12864-023-09602-z
 
 **Authors:** Alina Krawczynski, Rannyele Passos Ribeiro (built with assistance from Claude)
 
@@ -30,7 +30,7 @@ Built around the study's own TMM-normalized master expression matrix.
 | `tmm_expression_matrix.csv` | Master TMM-normalized expression matrix (119,737 genes x 15 samples). |
 | `sample_metadata.csv` | Maps each sample column to its regeneration stage + replicate number. |
 | `curated_marker_genes.csv` | Curated neurogenesis/stem-cell marker gene list with the paper's own precomputed DEG calls. |
-| `deg_all_comparisons.csv` | Full differential-expression results table across all pairwise stage comparisons. |
+| `deg_all_comparisons.csv.gz` | Full differential-expression results table across all pairwise stage comparisons. |
 | `gene_annotation_trinotate_trimmed.csv.gz` | Trinotate functional annotation, trimmed to the 2 columns this dashboard actually uses (see note below). |
 
 **Note on the trimmed annotation file:** The original Trinotate annotation export carries 16
@@ -38,6 +38,16 @@ columns (transcript IDs, RNAMMER, Pfam, SignalP, TmHMM, eggnog, Kegg, multiple G
 etc.) at 120MB: too large to host directly on GitHub. Since this dashboard only ever reads the
 gene ID and the parsed BLASTX best-hit description, we trimmed it to just those two columns and
 gzip-compressed it to under 1MB, with byte-identical values for the columns actually used.
+
+**Data source, license and changes.** All data files in this folder are derived from the
+supplementary files of Paré et al. 2023 (*BMC Genomics* 24:583), published under the
+[Creative Commons Attribution 4.0 license (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
+The originals are available from the article's Supplementary Information at
+<https://doi.org/10.1186/s12864-023-09602-z>. We changed them as follows: the supplementary
+Excel tables were converted to CSV, with gene IDs and sample columns standardized and the marker
+list's multi-row header parsed into single column names; the Trinotate annotation was trimmed and
+collapsed as described above; and `deg_all_comparisons.csv.gz` is gzip-compressed to keep it under
+GitHub's file-size warning (pandas reads it directly).
 
 ---
 
@@ -150,4 +160,4 @@ To enable it:
 
 If you use this dashboard, please cite the original paper:
 
-> Paré, A. et al. (2023). BMC Genomics 24:583. https://doi.org/10.1186/s12864-023-09602-z
+> Paré, L. et al. (2023). BMC Genomics 24:583. https://doi.org/10.1186/s12864-023-09602-z

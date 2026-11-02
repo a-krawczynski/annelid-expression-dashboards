@@ -17,3 +17,6 @@ blast_bin/
 
 # Local-only backup of the pre-license-fix Andreatta dashboard (contains modified CC BY-NC-ND data; never upload)
 .andreatta_original_backup/
+
+# Local-only backups (uncompressed originals of files shipped gzipped)
+.local_backup/
