@@ -27,7 +27,7 @@ S3, S4), which the notebook reads from the original supplementary files each tim
 
 | File | What it is |
 |---|---|
-| `Fold_Change_Comparison_Dashboard.ipynb` | The dashboard notebook — open this in Jupyter. |
+| `Fold_Change_Comparison_Dashboard.ipynb` | The dashboard notebook. Open this in Jupyter. |
 | `pnas.2514719123.sd01.xlsx` | PNAS Dataset S1: l-cry DE results, immature and premature female heads (4 sheets). |
 | `pnas.2514719123.sd03.xlsx` | PNAS Dataset S3: l-cry and nr0b1/2 DE results, immature heads, two independent analyses (8 sheets). |
 | `pnas.2514719123.sd04.xlsx` | PNAS Dataset S4: nr0b1/2 and l-cry DE results, immature worms (8 sheets). |
@@ -56,8 +56,8 @@ Download and install **Miniconda** (a small, free Python distribution):
 <https://www.anaconda.com/download/success> → "Miniconda Installers" → pick your operating system.
 Accept the default options during installation.
 
-- **Windows:** this also installs a program called **Anaconda Prompt** — that's the "terminal"
-  referred to below.
+- **Windows:** this also installs a program called **Anaconda Prompt** (that's the "terminal"
+  referred to below).
 - **macOS / Linux:** use the built-in **Terminal** app.
 
 ### 2. Download this project
@@ -90,7 +90,7 @@ the notebook.
 
 ### 5. Run the notebook
 
-The **first code cell is a dependency check** — it automatically installs any Python packages the
+The **first code cell is a dependency check**. It automatically installs any Python packages the
 notebook needs that you don't already have. Run it first (select it and press **Shift+Enter**).
 If it installs anything, it will tell you to restart the kernel: do **Kernel → Restart Kernel**,
 then continue.
@@ -147,7 +147,7 @@ To enable it:
    resulting database files in a folder called **`blast_db/`** next to the notebook; that's where
    the notebook looks by default.
 
-Note this only covers transcriptome-mapped (`comp..._c#_seq#`) genes — genome-mapped (`XLOC_...`)
+Note this only covers transcriptome-mapped (`comp..._c#_seq#`) genes. Genome-mapped (`XLOC_...`)
 genes aren't searchable this way, since no matching genome reference sequence is available.
 
 ## Citation
