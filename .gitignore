@@ -20,3 +20,6 @@ blast_bin/
 
 # Local-only backups (uncompressed originals of files shipped gzipped)
 .local_backup/
+
+# Zipped BLAST databases, uploaded as GitHub Release assets instead of committed (files exceed 100MB)
+release_assets/

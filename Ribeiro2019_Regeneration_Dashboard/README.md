@@ -155,11 +155,16 @@ To enable it:
    - The notebook finds BLAST+ automatically as long as it's on your system `PATH` (the installers
      and conda both do this for you). If it's somewhere unusual, set `BLAST_BIN_DIR` at the top of
      the BLAST code cell to the folder containing the executables.
-2. **Build the two search databases once** (one per species). The species transcriptome FASTAs are
-   not included here (they're large). The exact commands (rewrite the FASTA headers, then run
-   `makeblastdb` for each species) are in the comment at the top of the BLAST code cell. Put the
-   resulting database files in a folder called **`blast_db/`** next to the notebook, named
-   `ribeiro_sgracilis` and `ribeiro_shystrix`; that's where the notebook looks by default.
+2. **Get the two search databases** (one per species; they're too large to keep in the repository
+   itself). Choose one:
+   - **Download them ready-made (easiest):** download `ribeiro2019_blast_db.zip` from this
+     repository's [BLAST databases release](https://github.com/a-krawczynski/annelid-expression-dashboards/releases/tag/blast-databases-v1) and unzip it inside this dashboard folder. It
+     creates the **`blast_db/`** folder the notebook looks for.
+   - **Build them yourself:** the two Trinity assemblies are published as `.rar` archives at
+     <https://github.com/rannypribeiro/Regeneration_transcriptomics> (extract them with 7-Zip, The Unarchiver or similar). Then run the commands in the
+     comment at the top of the BLAST code cell (rewrite the FASTA headers, then run `makeblastdb`
+     for each species). Put the resulting files in a folder called **`blast_db/`** next to the
+     notebook, named `ribeiro_sgracilis` and `ribeiro_shystrix`.
 
 ## Citation
 
