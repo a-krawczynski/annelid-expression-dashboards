@@ -45,12 +45,13 @@ plain description, then gzip-compressed the result, shrinking both files to unde
 with identical annotation content to what the dashboard would have produced by parsing the raw
 reports at runtime.
 
-**Data source, license and changes.** The data files in this folder come from Ribeiro et al. 2019
-(*BMC Genomics* 20:855), published under the
-[Creative Commons Attribution 4.0 license (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/);
-see the article at <https://doi.org/10.1186/s12864-019-6223-y> for the original data. The two
-Trinotate annotation reports were changed as described above (collapsed to one row per gene,
-best-hit field parsed, gzip-compressed).
+**Data source and changes.** The expression matrices and Trinotate annotation reports come from the
+analysis in Ribeiro et al. 2019 (*BMC Genomics* 20:855, <https://doi.org/10.1186/s12864-019-6223-y>).
+Rannyele Passos Ribeiro, the study's first author, is a co-author of this repository. Raw reads are at
+the NCBI Sequence Read Archive (BioProjects PRJNA517681 and PRJNA517687), and the study's assemblies
+and differential-expression results are at <https://github.com/rannypribeiro/Regeneration_transcriptomics>.
+The two `.TMM.EXPR.matrix` files are included unchanged. The two Trinotate annotation reports were
+changed as described above (collapsed to one row per gene, best-hit field parsed, gzip-compressed).
 
 ---
 

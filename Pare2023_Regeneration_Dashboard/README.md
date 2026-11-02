@@ -40,14 +40,18 @@ gene ID and the parsed BLASTX best-hit description, we trimmed it to just those 
 gzip-compressed it to under 1MB, with byte-identical values for the columns actually used.
 
 **Data source, license and changes.** All data files in this folder are derived from the
-supplementary files of Paré et al. 2023 (*BMC Genomics* 24:583), published under the
+Additional files of Paré et al. 2023 (*BMC Genomics* 24:583), published under the
 [Creative Commons Attribution 4.0 license (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
 The originals are available from the article's Supplementary Information at
-<https://doi.org/10.1186/s12864-023-09602-z>. We changed them as follows: the supplementary
-Excel tables were converted to CSV, with gene IDs and sample columns standardized and the marker
-list's multi-row header parsed into single column names; the Trinotate annotation was trimmed and
-collapsed as described above; and `deg_all_comparisons.csv.gz` is gzip-compressed to keep it under
-GitHub's file-size warning (pandas reads it directly).
+<https://doi.org/10.1186/s12864-023-09602-z>. We changed them as follows:
+
+- `tmm_expression_matrix.csv`: Additional file 12 ("TMM" sheet) converted to CSV; values unchanged.
+- `sample_metadata.csv`: our own table, built from the sample column names in Additional file 12.
+- `curated_marker_genes.csv`: Additional file 18; the two marker sheets (neurogenesis, stem cell/GMP)
+  combined into one table with single-row column names and a `category` column added.
+- `deg_all_comparisons.csv.gz`: Additional file 13; the 15 comparison sheets combined into one table
+  with a `comparison` column, Trinotate's `.` placeholders blanked, and the file gzip-compressed.
+- `gene_annotation_trinotate_trimmed.csv.gz`: Additional file 7, trimmed and collapsed as described above.
 
 ---
 
