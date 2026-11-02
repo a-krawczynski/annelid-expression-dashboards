@@ -7,8 +7,8 @@ Interactive gene-expression explorer for the whole-body regeneration transcripto
 > while anterior regeneration is a distinct process. *BMC Genomics* 20, 855.
 > https://doi.org/10.1186/s12864-019-6223-y
 
-**Authors:** Alina Krawczynski, Rannyele Passos Ribeiro (powered by Claude)
-**Lab:** Özpolat Lab, Washington University in St. Louis, 1 Brookings Drive, St. Louis, MO 63130
+**Authors:** Alina Krawczynski, Rannyele Passos Ribeiro (built with assistance from Claude)
+**Lab:** Özpolat Lab, Washington University in St. Louis
 **Year:** 2026
 
 ## What this is
@@ -18,7 +18,7 @@ conditions (Normal / Anterior regeneration / Posterior regeneration) in two syll
 **Syllis gracilis** and **Sphaerosyllis hystrix**, each with its own independent *de novo* Trinity
 assembly. Pick a species, then pick genes by ID, by pasting a list, or by searching Trinotate
 BLASTX annotation for a keyword, then generate bar charts, a hierarchically-clustered heatmap, and
-annotation lookups — all exportable as publication-ready vector PDFs and CSVs to a folder of your
+annotation lookups. All exportable as publication-ready vector PDFs and CSVs to a folder of your
 choosing.
 
 Built around each species' own TMM-normalized gene expression matrix.
@@ -27,7 +27,7 @@ Built around each species' own TMM-normalized gene expression matrix.
 
 | File | What it is |
 |---|---|
-| `Regeneration_Expression_Dashboard.ipynb` | The dashboard notebook — open this in Jupyter. |
+| `Regeneration_Expression_Dashboard.ipynb` | The dashboard notebook. Open this in Jupyter. |
 | `Sgracilis_condition_gene_matrix.TMM.EXPR.matrix` | *Syllis gracilis* TMM-normalized expression matrix (309,576 genes x 3 conditions). |
 | `Shystrix_condition_gene_matrix.TMM.EXPR.matrix` | *Sphaerosyllis hystrix* TMM-normalized expression matrix (179,841 genes x 3 conditions). |
 | `Sgracilis_annotation_trimmed.csv.gz` | *S. gracilis* Trinotate functional annotation, pre-processed to gene-level (see note below). |
@@ -35,11 +35,11 @@ Built around each species' own TMM-normalized gene expression matrix.
 
 **Note on the annotation files:** the original Trinotate reports list one row per *transcript*
 (with 16 columns including RNAMMER, Pfam, SignalP, TmHMM, eggnog, Kegg, multiple GO-term columns,
-and full nucleotide/peptide sequence columns) at 616MB and 438MB for the two species — far too
+and full nucleotide/peptide sequence columns) at 616MB and 438MB for the two species. Far too
 large to host on GitHub, and mostly bulk this dashboard never reads. We pre-collapsed each report
 to one row per *gene* (matching the expression matrix's gene-level ID space, preferring an
 annotated isoform when one exists) and pre-parsed the compound BLASTX best-hit field down to a
-plain description, then gzip-compressed the result — shrinking both files to under 1.5MB combined
+plain description, then gzip-compressed the result, shrinking both files to under 1.5MB combined
 with identical annotation content to what the dashboard would have produced by parsing the raw
 reports at runtime.
 
@@ -55,8 +55,8 @@ Download and install **Miniconda** (a small, free Python distribution):
 <https://www.anaconda.com/download/success> → "Miniconda Installers" → pick your operating system.
 Accept the default options during installation.
 
-- **Windows:** this also installs a program called **Anaconda Prompt** — that's the "terminal"
-  referred to below.
+- **Windows:** this also installs a program called **Anaconda Prompt** (the "terminal"
+  referred to below).
 - **macOS / Linux:** use the built-in **Terminal** app.
 
 ### 2. Download this project
@@ -74,7 +74,7 @@ For example, if you unzipped the project onto your Desktop:
 cd Desktop/annelid-expression-dashboards/Ribeiro2019_Regeneration_Dashboard
 ```
 
-(Type `cd ` — with a space — then drag the folder onto the terminal window to fill in the path
+(Type `cd ` (with a space) then drag the folder onto the terminal window to fill in the path
 automatically, then press Enter.)
 
 ### 4. Start Jupyter
@@ -89,12 +89,12 @@ open the notebook.
 
 ### 5. Run the notebook
 
-The **first code cell is a dependency check** — it automatically installs any Python packages the
+The **first code cell is a dependency check**; it automatically installs any Python packages the
 notebook needs that you don't already have. Run it first (select it and press **Shift+Enter**).
 If it installs anything, it will tell you to restart the kernel: do **Kernel → Restart Kernel**,
 then continue.
 
-Then run everything: **Kernel → Restart Kernel and Run All Cells**. Scroll to the bottom — the
+Then run everything: **Kernel → Restart Kernel and Run All Cells**. Scroll to the bottom. The
 interactive dashboard appears under the last cell.
 
 > If you prefer to install the packages yourself instead of letting the first cell do it:
@@ -108,7 +108,7 @@ interactive dashboard appears under the last cell.
    hystrix* (the gene picker refreshes to that species' own gene list), then select any custom
    combination of the 3 conditions.
 2. **Choose Target Genes** — filter/click from the gene list, paste a list of `TR#|c#_g#` IDs, or
-   search by Trinotate BLASTX annotation keyword (e.g. "kinase", "laminin") — scoped to whichever
+   search by Trinotate BLASTX annotation keyword (e.g. "kinase", "laminin"), scoped to whichever
    species is currently selected.
 3. Click **🎯 Generate Visuals (View Only)** to preview bar charts, the multi-gene heatmap, and
    annotation results on-screen, or **💾 Export Active Results** to save vector PDFs and CSVs to a
@@ -124,7 +124,7 @@ default red-blue scheme for both the bar charts and the heatmap.
 Reads for each condition were mapped back to that species' own Trinity assembly and gene-level
 counts were TMM-normalized (trimmed mean of M-values). In plain terms, TMM rescales each
 condition's library so a handful of very highly-expressed transcripts can't skew the comparison
-between conditions — it corrects for differences in sequencing depth and RNA composition so one
+between conditions. It corrects for differences in sequencing depth and RNA composition so one
 condition doesn't just look like it has "more of everything" purely because it was sequenced more
 deeply. *Sgracilis* and *Shystrix* gene IDs are two entirely separate ID spaces and are never
 comparable to one another directly.
@@ -133,7 +133,7 @@ comparable to one another directly.
 
 The notebook has an optional cell that lets you paste a nucleotide sequence and find the matching
 transcript in whichever species' own Trinity assembly is currently selected. **Everything else in
-the dashboard works without this** — if BLAST isn't set up, that one cell just prints a short
+the dashboard works without this**. If BLAST isn't set up, that one cell just prints a short
 reminder and nothing else is affected.
 
 To enable it:
@@ -146,10 +146,10 @@ To enable it:
      and conda both do this for you). If it's somewhere unusual, set `BLAST_BIN_DIR` at the top of
      the BLAST code cell to the folder containing the executables.
 2. **Build the two search databases once** (one per species). The species transcriptome FASTAs are
-   not included here (they're large). The exact commands — rewrite the FASTA headers, then run
-   `makeblastdb` for each species — are in the comment at the top of the BLAST code cell. Put the
+   not included here (they're large). The exact commands (rewrite the FASTA headers, then run
+   `makeblastdb` for each species) are in the comment at the top of the BLAST code cell. Put the
    resulting database files in a folder called **`blast_db/`** next to the notebook, named
-   `ribeiro_sgracilis` and `ribeiro_shystrix` — that's where the notebook looks by default.
+   `ribeiro_sgracilis` and `ribeiro_shystrix`; that's where the notebook looks by default.
 
 ## Citation
 
