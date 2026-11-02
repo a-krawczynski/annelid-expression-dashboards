@@ -8,7 +8,9 @@ Interactive gene-expression explorer for the whole-body regeneration transcripto
 > https://doi.org/10.1186/s12864-019-6223-y
 
 **Authors:** Alina Krawczynski, Rannyele Passos Ribeiro (built with assistance from Claude)
+
 **Lab:** Özpolat Lab, Washington University in St. Louis
+
 **Year:** 2026
 
 ## What this is
