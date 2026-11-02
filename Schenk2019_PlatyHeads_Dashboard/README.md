@@ -5,7 +5,9 @@ Interactive gene-expression explorer for the head-maturation transcriptome from:
 > Schenk, S. et al. (2019). *eLife*. https://doi.org/10.7554/eLife.45530
 
 **Authors:** Alina Krawczynski, Rannyele Passos Ribeiro (built with assistance from Claude)
+
 **Lab:** Özpolat Lab, Washington University in St. Louis
+
 **Year:** 2026
 
 ## What this is
