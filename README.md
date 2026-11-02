@@ -6,7 +6,9 @@ hierarchically-clustered heatmaps, and annotation lookups, all exportable as pub
 PDFs and CSVs.
 
 **Authors:** Alina Krawczynski, Rannyele Passos Ribeiro (built with assistance from Claude).
+
 **Lab:** Özpolat Lab, Washington University in St. Louis.
+
 **Year:** 2026
 
 ## Dashboards
