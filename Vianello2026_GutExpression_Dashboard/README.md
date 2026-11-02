@@ -2,7 +2,8 @@
 
 Interactive gene-expression explorer for the comparative gut transcriptomics study from:
 
-> Vianello, E. et al. (2026). `doi:10.5281/zenodo.17746910`
+> Vianello, S. D. et al. (2026). *PLOS Biology* 24(1):e3003571. https://doi.org/10.1371/journal.pbio.3003571
+> Data: Zenodo, https://doi.org/10.5281/zenodo.17746910
 
 **Authors:** Alina Krawczynski, Rannyele Passos Ribeiro (built with assistance from Claude)
 **Lab:** Özpolat Lab, Washington University in St. Louis
@@ -32,6 +33,13 @@ expression matrix.
 
 All four data files are small enough (under 10MB combined) to host directly on GitHub as-is. No
 trimming was needed for this dataset.
+
+**About the data files and their license.** The four data files are copied unmodified from the
+authors' Zenodo archive (`resources/` folder of `StefanoVianello/ASICOB_GCP_AdultBilaterianGuts`
+v1.1, https://doi.org/10.5281/zenodo.17746910), which is distributed under the GNU General Public
+License v3.0. They remain under that license, and a copy of it is included here as
+`LICENSE-GPL-3.0.txt`. The license on these files is separate from the MIT license on this
+repository's own code.
 
 ---
 
@@ -143,4 +151,5 @@ To enable it:
 
 If you use this dashboard, please cite the original study:
 
-> Vianello, E. et al. (2026). `doi:10.5281/zenodo.17746910`
+> Vianello, S. D. et al. (2026). *PLOS Biology* 24(1):e3003571. https://doi.org/10.1371/journal.pbio.3003571
+> Data: Zenodo, https://doi.org/10.5281/zenodo.17746910
