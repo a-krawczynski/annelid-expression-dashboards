@@ -5,7 +5,9 @@ Interactive fold-change explorer for the genotype-comparison transcriptomics stu
 > Andreatta, G. et al. (2026). *PNAS* 123(12):e2514719123. https://doi.org/10.1073/pnas.2514719123
 
 **Authors:** Alina Krawczynski, Rannyele Passos Ribeiro (built with assistance from Claude)
+
 **Lab:** Özpolat Lab, Washington University in St. Louis
+
 **Year:** 2026
 
 ## What this is
