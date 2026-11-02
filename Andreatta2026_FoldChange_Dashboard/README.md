@@ -4,8 +4,8 @@ Interactive fold-change explorer for the genotype-comparison transcriptomics stu
 
 > Andreatta, G. et al. (2026). *PNAS* 123(12):e2514719123. https://doi.org/10.1073/pnas.2514719123
 
-**Authors:** Alina Krawczynski, Rannyele Passos Ribeiro (powered by Claude)
-**Lab:** Özpolat Lab, Washington University in St. Louis, 1 Brookings Drive, St. Louis, MO 63130
+**Authors:** Alina Krawczynski, Rannyele Passos Ribeiro (built with assistance from Claude)
+**Lab:** Özpolat Lab, Washington University in St. Louis
 **Year:** 2026
 
 ## What this is
@@ -13,9 +13,9 @@ Interactive fold-change explorer for the genotype-comparison transcriptomics stu
 A self-contained Jupyter dashboard for exploring log2 fold-change results across ~20 pairwise
 differential-expression comparisons between specific *Platynereis dumerilii* genotypes
 (l-cry⁻ᐟ⁻, nr0b1/2⁻ᐟ⁻, nr0b1/2⁺ᐟ⁻, and their respective wild types). Unlike the other dashboards
-in this series, there's no single expression matrix here — instead, pick genes by raw ID or by a
+in this series, there's no single expression matrix here. Instead, pick genes by raw ID or by a
 curated gene symbol, then generate significance-colored bar charts, a hierarchically-clustered
-log2FC heatmap, and annotation lookups — all exportable as publication-ready vector PDFs and CSVs
+log2FC heatmap, and annotation lookups; all exportable as publication-ready vector PDFs and CSVs
 to a folder of your choosing.
 
 Built directly from the paper's own precomputed differential-expression tables (PNAS Datasets S1,
@@ -29,7 +29,7 @@ S3, S4).
 | `de_results_all_comparisons.csv` | Combined differential-expression results across all ~20 pairwise comparisons (130,914 rows). |
 | `curated_gene_summary.csv` | Curated gene-of-interest list (Dataset S5) with clean, human-readable gene symbols, used for symbol-based search. |
 
-`de_results_all_comparisons.csv` is 52MB — large but under GitHub's 100MB per-file limit, so no
+`de_results_all_comparisons.csv` is 52MB, large but under GitHub's 100MB per-file limit, so no
 trimming was needed here (unlike the annotation files in some of the other dashboards, this table
 is mostly numeric fold-change/p-value data, not bulky free text).
 
@@ -64,7 +64,7 @@ For example, if you unzipped the project onto your Desktop:
 cd Desktop/annelid-expression-dashboards/Andreatta2026_FoldChange_Dashboard
 ```
 
-(Type `cd ` — with a space — then drag the folder onto the terminal window to fill in the path
+(Type `cd ` with a space then drag the folder onto the terminal window to fill in the path
 automatically, then press Enter.)
 
 ### 4. Start Jupyter
@@ -84,7 +84,7 @@ notebook needs that you don't already have. Run it first (select it and press **
 If it installs anything, it will tell you to restart the kernel: do **Kernel → Restart Kernel**,
 then continue.
 
-Then run everything: **Kernel → Restart Kernel and Run All Cells**. Scroll to the bottom — the
+Then run everything: **Kernel → Restart Kernel and Run All Cells**. Scroll to the bottom, the
 interactive dashboard appears under the last cell.
 
 > If you prefer to install the packages yourself instead of letting the first cell do it:
@@ -112,14 +112,14 @@ default red-blue scheme for both the bar charts and the heatmap.
 This dashboard doesn't show absolute expression at all, so there's no normalization step
 performed here. Every log2FC/padj value plotted is read directly from the paper's own precomputed
 differential-expression tables, which the paper generated with its own upstream normalization and
-DE-testing pipeline — see the paper's Methods for that procedure.
+DE-testing pipeline; see the paper's Methods for that procedure.
 
 ## BLAST sequence search (optional)
 
 The notebook has an optional cell that lets you paste a nucleotide sequence and find the matching
 transcript in the **HAMN01** reference transcriptome (the assembly this dashboard's
 transcriptome-mapped gene IDs were generated against). **Everything else in the dashboard works
-without this** — if BLAST isn't set up, that one cell just prints a short reminder and nothing
+without this**: if BLAST isn't set up, that one cell just prints a short reminder and nothing
 else is affected.
 
 To enable it:
@@ -133,7 +133,7 @@ To enable it:
      the BLAST code cell to the folder containing the executables.
 2. **Build the search database once.** The exact commands (download the HAMN01 FASTA, rewrite its
    headers, run `makeblastdb`) are in the comment at the top of the BLAST code cell. Put the
-   resulting database files in a folder called **`blast_db/`** next to the notebook — that's where
+   resulting database files in a folder called **`blast_db/`** next to the notebook; that's where
    the notebook looks by default.
 
 Note this only covers transcriptome-mapped (`comp..._c#_seq#`) genes — genome-mapped (`XLOC_...`)
