@@ -21,19 +21,28 @@ log2FC heatmap, and annotation lookups; all exportable as publication-ready vect
 to a folder of your choosing.
 
 Built directly from the paper's own precomputed differential-expression tables (PNAS Datasets S1,
-S3, S4).
+S3, S4), which the notebook reads from the original supplementary files each time it runs.
 
 ## What's in this folder
 
 | File | What it is |
 |---|---|
 | `Fold_Change_Comparison_Dashboard.ipynb` | The dashboard notebook — open this in Jupyter. |
-| `de_results_all_comparisons.csv` | Combined differential-expression results across all ~20 pairwise comparisons (130,914 rows). |
-| `curated_gene_summary.csv` | Curated gene-of-interest list (Dataset S5) with clean, human-readable gene symbols, used for symbol-based search. |
+| `pnas.2514719123.sd01.xlsx` | PNAS Dataset S1: l-cry DE results, immature and premature female heads (4 sheets). |
+| `pnas.2514719123.sd03.xlsx` | PNAS Dataset S3: l-cry and nr0b1/2 DE results, immature heads, two independent analyses (8 sheets). |
+| `pnas.2514719123.sd04.xlsx` | PNAS Dataset S4: nr0b1/2 and l-cry DE results, immature worms (8 sheets). |
+| `pnas.2514719123.sd05.xlsx` | PNAS Dataset S5: the authors' curated genes of interest with clean gene symbols, used for symbol-based search. |
 
-`de_results_all_comparisons.csv` is 52MB, large but under GitHub's 100MB per-file limit, so no
-trimming was needed here (unlike the annotation files in some of the other dashboards, this table
-is mostly numeric fold-change/p-value data, not bulky free text).
+**About the data files and their license.** The four `.xlsx` files are the paper's supplementary
+Datasets S1, S3, S4 and S5, included exactly as published and unmodified. They are © the authors and
+distributed under the [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 license
+(CC BY-NC-ND 4.0)](https://creativecommons.org/licenses/by-nc-nd/4.0/); the originals are available
+from the paper's Supporting Information at <https://doi.org/10.1073/pnas.2514719123>. Because that
+license does not allow sharing modified versions, this repository does not include any combined or
+cleaned copy of the data. Instead, when the notebook runs it reads the 20 DE sheets and the 4 curated
+sheets, combines them, removes the duplicate rows present in Dataset S3A as published, and parses the
+annotation strings, all in memory. Nothing modified is written to disk. Loading takes about 20 to 30
+seconds. The license on these four files is separate from the license on this repository's own code.
 
 ---
 
@@ -91,7 +100,7 @@ interactive dashboard appears under the last cell.
 
 > If you prefer to install the packages yourself instead of letting the first cell do it:
 > ```bash
-> pip install pandas numpy matplotlib seaborn scipy ipywidgets
+> pip install pandas numpy matplotlib seaborn scipy ipywidgets openpyxl
 > ```
 
 ### 6. Use the dashboard
